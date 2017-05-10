@@ -1,4 +1,5 @@
-## Welcome to GitHub Pages
+# Programming 1 Portfolio
+## Nastassja Motro 2017
 
 You can use the [editor on GitHub](https://github.com/nastassjamotro/Programming-1-Portfolio/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
