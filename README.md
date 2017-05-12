@@ -50,9 +50,16 @@ void draw() {
   }
 ``` 
 
-This is what the start menu would look like:
+### This is what the start menu would look like:
 
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/Versus.png "Logo Title Text 1")
+
+### When the actual playing screen loads it would look something like this:
+  The first is an example of the mockup using the actual pictures of the character. But the game will actually utilize the logos of each of the charactes.
+  
+
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/figuresmockup.png "Logo Title Text 1")
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/logosmockup.png "Logo Title Text 1")
 
 
 You can use the [editor on GitHub](https://github.com/nastassjamotro/Programming-1-Portfolio/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
