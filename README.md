@@ -1,7 +1,15 @@
 # Programming 1 Portfolio
 ## Nastassja Motro 2017
+### With Bryn Esperson and Tessa Vu
 
-Inline-style: 
+## Our Game
+We have decided to create a Chess Game using the Java Language.
+This program is just supposed to replicate the design of a chess game like one you would find on an app on your phone or on the computer. It's not as fancy with as many special effects as some other games but it still has many cool features.
+
+### Starter
+The game starts off with a main menu screen. We decided to create a theme based game. The them is Marvel v. DC. 
+
+ 
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/pic.png "Logo Title Text 1")
 
 
