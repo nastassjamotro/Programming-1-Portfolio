@@ -52,7 +52,7 @@ void draw() {
 
 This is what the start menu would look like:
 
-![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/Versus.png "Logo Title Text 1")
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/Images/Versus.png "Logo Title Text 1")
 
 
 You can use the [editor on GitHub](https://github.com/nastassjamotro/Programming-1-Portfolio/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
