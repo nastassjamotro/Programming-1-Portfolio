@@ -24,9 +24,9 @@ The game starts off with a main menu screen. We decided to create a theme based 
 
 ```markdown
 Code:
-`
-PImage startmenu;
-PFont title;
+
+`PImage startmenu;`
+`PFont title;`
 PFont description;
 int screenX, screenY, stage;
 
