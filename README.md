@@ -3,13 +3,35 @@
 ### With Bryn Esperson and Tessa Vu
 
 ## Our Game
+
 We have decided to create a Chess Game using the Java Language.
 This program is just supposed to replicate the design of a chess game like one you would find on an app on your phone or on the computer. It's not as fancy with as many special effects as some other games but it still has many cool features.
 
-### Starter
-The game starts off with a main menu screen. We decided to create a theme based game. The them is Marvel v. DC. 
+## Basic Rules
 
- 
+Chess is a two player game. One person controls one set of peices (black pieces) and the other player controls the opposite set of pieces (white pieces). Players cannot switch set of pieces midgame. The goal of the game is to get the other player's King into checkmate.
+
+### Check, Checkmate, and Stalemate
+
+* check - When the King of a player can be taken by a piece of the opponent, one says that the King is in check. It is not allowed to make a move, such that ones King is in check after the move.
+
+* checkmate - When a player is in check, and he cannot make a move such that after the move, the King is not in check, then he is mated. The player that is mated loses teh game, and the player that mates him wins the game.
+
+* stalemate - When a player cannot make any legal move, but he is not in check, then the player is said to be stalemated. In a case of a stalemate, the game is a draw.
+
+## Starter
+The game starts off with a main menu screen. We decided to create a theme based game. The theme is Marvel vs. DC with Marvel being the white designated set of pieces and DC being the black designated set of pieces. As soon as the game is opened, the starter menu will pop open.
+
+```markdown
+Code:
+
+`PImage startmenu;
+PFont title;
+PFont description;
+int screenX, screenY, stage;`
+
+
+``` 
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/pic.png "Logo Title Text 1")
 
 
