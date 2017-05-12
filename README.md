@@ -22,10 +22,10 @@ Chess is a two player game. One person controls one set of peices (black pieces)
 ## Starter
 The game starts off with a main menu screen. We decided to create a theme based game. The theme is Marvel vs. DC with Marvel being the white designated set of pieces and DC being the black designated set of pieces. As soon as the game is opened, the starter menu will pop open.
 
-```markdown
+
 Code:
 
-```
+```java
 PImage startmenu;
 PFont title;
 PFont description;
