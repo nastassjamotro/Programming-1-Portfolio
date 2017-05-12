@@ -62,6 +62,34 @@ void draw() {
 
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/logosmockup.png "Logo Title Text 1")
 
+The Characters on the DC side are:
+
+* Martian Manhunter - as the king
+
+* Wonder Woman - as the queen
+
+* SuperGirl - as the bishop
+
+* Batman - as the knight
+
+* Superman - as the rook
+
+* Flash - as the pawn
+
+The Characters on the Marvel side are:
+
+* Captain America - as the king
+
+* Captain Marvel - as the queen
+
+* Black Widow - as the bishop
+
+* Wolverine - as the knight
+
+* Iron Man - as the rook
+
+* Hawkeye - as the pawn
+
 
 You can use the [editor on GitHub](https://github.com/nastassjamotro/Programming-1-Portfolio/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
