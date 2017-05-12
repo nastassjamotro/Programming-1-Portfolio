@@ -25,7 +25,7 @@ The game starts off with a main menu screen. We decided to create a theme based 
 ```markdown
 Code:
 
-```javascript
+```
 PImage startmenu;
 PFont title;
 PFont description;
