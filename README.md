@@ -62,7 +62,7 @@ void draw() {
 
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/logosmockup.png "Logo Title Text 1")
 
-The Characters on the DC side are:
+### The Characters on the DC side are:
 
 * Martian Manhunter - as the king
 
@@ -76,7 +76,7 @@ The Characters on the DC side are:
 
 * Flash - as the pawn
 
-The Characters on the Marvel side are:
+### The Characters on the Marvel side are:
 
 * Captain America - as the king
 
