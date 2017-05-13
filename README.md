@@ -137,8 +137,7 @@ public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
     if(super.isValid(board, fromX, fromY, toX, toY) == false) {
       return false;
     }
-    if(Math.abs(toX - fromX) > 1 || Math.abs(toY - fromY) > 1) {
-      if (moved) {
+    if(Math.abs(toX - fromX) > 1 || Math.abs(toY - fromY) > 1) {      if (moved) {
         return false;
       }
       return false;
@@ -166,7 +165,7 @@ castle = true;
 return true;
 ```
 
-** Code for Queen Piece:
+**Code for Queen Piece:**
 
 
 ```javascript
