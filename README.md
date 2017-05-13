@@ -193,17 +193,17 @@ public class Queen extends Piece {
     return false;
   }
 }
-a```
+```
 
 Code for Bishop Piece:
 
 ```javascript
 public class Bishop extends Piece {
-a  public Bishop(boolean available, int x, int y) {
+  public Bishop(boolean available, int x, int y) {
     super(available, x, y);
   }
   
-j  @Override
+  @Override
   public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
     if(super.isValid(board, fromX, fromY, toX, toY) == false) {
       return false;
