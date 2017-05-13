@@ -157,7 +157,8 @@ if(fromY - toY == 2 && fromX == toX) {
     return false;
   }
 } else {
-  castle = false;
+
+castle = false;
   return false;
 }
 castle = true;
@@ -166,6 +167,7 @@ return true;
 ```
 
 Code for Queen Piece:
+
 
 ```javascript
 public class Queen extends Piece {
@@ -186,6 +188,27 @@ public class Queen extends Piece {
       return true;
     }
     if(toY == fromY) {
+      return true;
+    }
+    return false;
+  }
+}
+```
+
+Code for Bishop Piece:
+
+```javascript
+public class Bishop extends Piece {
+  public Bishop(boolean available, int x, int y) {
+    super(available, x, y);
+  }
+  
+  @Override
+  public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
+    if(super.isValid(board, fromX, fromY, toX, toY) == false) {
+      return false;
+    }
+    if(toX - fromX == toY - fromY) {
       return true;
     }
     return false;
