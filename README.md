@@ -67,8 +67,9 @@ void draw() {
 ### The Characters on the DC side are:
 
 * Martian Manhunter - as the king
-e
+
 * Wonder Woman - as the queen
+
 * SuperGirl - as the bishop
 
 * Batman - as the knight
@@ -77,28 +78,32 @@ e
 
 * Flash - as the pawn
 
-s### The Characters on the Marvel side are:
+### The Characters on the Marvel side are:
 
 * Captain America - as the king
+
 * Captain Marvel - as the queen
 
 * Black Widow - as the bishop
 
 * Wolverine - as the knight
 
-J* Iron Man - as the rook
-l* Hawkeye - as the pawn
+* Iron Man - as the rook
+
+* Hawkeye - as the pawn
 
 ## Here are the rules for the pieces:
 
 * King - The King moves only one square in any direction: horizontally, vertically, or diagonally. The King can do a special move called castling but it may only be done with the use of the rook. The King is the most important piece of the game, and moves must be made in such a way that the king is never in check. If in check, the king must move and not any other piece.
+
 * Queen - The Queen has combined moves of the rook and bishop so i.e. it can move horizontally, diagonally, and vertically.
 
 * Bishop - The Bishop moves diagonally and only on the color it starts off on. It may not jump over pieces.
 
 * Knight - The Knight makes a move that consists of first one step in a horizontal or vertical direction, and then one step diagonally in an outward direction.
-e
+
 * Rook - The Rook moves in a straight line, wheter it's horizontal movement or vertical. It cannot move diagonally.
+
 * Pawn - The Pawn moves differently regarding whether it moves to an empty square or wheter it takes a piece of the opponent. When a Pawn does not take, it moves one square forward. When the Pawn has not moved at all, i.e., the Pawn is still at the second row (from the owning player's view), the Pawn may make a double step straight forward. When taking, a pawn goes one square diagonally forward.
 
 ### Special Moves:
