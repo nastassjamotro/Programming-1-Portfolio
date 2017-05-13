@@ -126,13 +126,14 @@ public class King extends Piece {
   public booelan moved;
   public boolean castle;
   public King(boolean available, int x, int y) {
-    suepr(available, x, y);
+(    suepr(available, x, y);
     this.moved = false;
     this.castle = false;
   }
   
   @Override
-  public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
+
+public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
     if(super.isValid(board, fromX, fromY, toX, toY) == false) {
       return false;
     }
@@ -164,6 +165,33 @@ castle = true;
 return true;
 ```
 
+Code for Queen Piece:
+
+```javascript
+public class Queen extends Piece {
+  public Queen(boolean available, int x, int y) {
+    super(available, x, y);
+  }
+  
+  @Override
+  public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
+    if(super.isValid(board, fromX, fromY, toX, toY) == false) {
+      return false;
+    }
+    // diagonal stuff
+    if(toX - fromX == toY - fromY) {
+      return true;
+    }
+    if(toX == fromX) {
+      return true;
+    }
+    if(toY == fromY) {
+      return true;
+    }
+    return false;
+  }
+}
+```
 You can use the [editor on GitHub](https://github.com/nastassjamotro/Programming-1-Portfolio/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
