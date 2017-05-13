@@ -6,7 +6,7 @@
 
 We have decided to create a Chess Game using the Java Language.
 This program is just supposed to replicate the design of a chess game like one you would find on an app on your phone or on the computer. It's not as fancy with as many special effects as some other games but it still has many cool features.
-
+*
 ## Basic Rules
 
 Chess is a two player game. One person controls one set of peices (black pieces) and the other player controls the opposite set of pieces (white pieces). Players cannot switch set of pieces midgame. The goal of the game is to get the other player's King into checkmate.
@@ -22,7 +22,7 @@ Chess is a two player game. One person controls one set of peices (black pieces)
 ## Starter
 The game starts off with a main menu screen. We decided to create a theme based game. The theme is Marvel vs. DC with Marvel being the white designated set of pieces and DC being the black designated set of pieces. As soon as the game is opened, the starter menu will pop open.
 
-Code:
+**Code for Starter Menu:**
 
 ```javascript
 PImage startmenu;
@@ -119,7 +119,7 @@ void draw() {
 7. The King and Rook must occupy the same rank (or row).
 8. When castling, the King moves two squares towards the Rook, and the Rook moves over the King to the next square.
 
-** Code for King Piece with Castling Move:
+**Code for King Piece with Castling Move:**
 
 ```javascript
 public class King extends Piece {
@@ -167,7 +167,6 @@ return true;
 
 **Code for Queen Piece:**
 
-
 ```javascript
 public class Queen extends Piece {
   public Queen(boolean available, int x, int y) {
@@ -177,7 +176,7 @@ public class Queen extends Piece {
   @Override
   public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
     if(super.isValid(board, fromX, fromY, toX, toY) == false) {
-      return false;
+*      return false;
     }
     // diagonal stuff
     if(toX - fromX == toY - fromY) {
@@ -194,7 +193,7 @@ public class Queen extends Piece {
 }
 ```
 
-**Code for Bishop Piece:
+**Code for Bishop Piece:**
 
 ```javascript
 public class Bishop extends Piece {
@@ -215,7 +214,7 @@ public class Bishop extends Piece {
 }
 ```
 
-** Code for Knight Piece: 
+**Code for Knight Piece:** 
 
 ```javascript
 public class Knight extends Piece {
@@ -240,7 +239,7 @@ public class Knight extends Piece {
 }
 ```
 
-** Code for Rook Piece with Castling:
+**Code for Rook Piece with Castling:**
 
 ```javascript
 public class Rook extends Piece {
@@ -293,7 +292,7 @@ castle = true;// moved = true;
 return true;
 ```
 
-** Code for Pawn Piece:
+**Code for Pawn Piece:**
 
 ```javascript
 public class Pawn extends Piece {
