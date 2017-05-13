@@ -183,7 +183,7 @@ public class Queen extends Piece {
     // diagonal stuff
     if(toX - fromX == toY - fromY) {
       return true;
-    }
+v    }
     if(toX == fromX) {
       return true;
     }
@@ -193,17 +193,17 @@ public class Queen extends Piece {
     return false;
   }
 }
-```
+a```
 
 Code for Bishop Piece:
 
 ```javascript
 public class Bishop extends Piece {
-  public Bishop(boolean available, int x, int y) {
+a  public Bishop(boolean available, int x, int y) {
     super(available, x, y);
   }
   
-  @Override
+j  @Override
   public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
     if(super.isValid(board, fromX, fromY, toX, toY) == false) {
       return false;
@@ -214,6 +214,12 @@ public class Bishop extends Piece {
     return false;
   }
 }
+```
+
+Code for Knight Piece:
+
+```javascript
+pu
 ```
 You can use the [editor on GitHub](https://github.com/nastassjamotro/Programming-1-Portfolio/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
