@@ -21,7 +21,6 @@ Chess is a two player game. One person controls one set of peices (black pieces)
 
 ## Starter
 The game starts off with a main menu screen. We decided to create a theme based game. The theme is Marvel vs. DC with Marvel being the white designated set of pieces and DC being the black designated set of pieces. As soon as the game is opened, the starter menu will pop open.
-
 **Code for Starter Menu:**
 
 ```javascript
@@ -51,7 +50,7 @@ void draw() {
 
 ### This is what the start menu would look like:
 
-![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/versus.png "Logo Title Text 1")
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/Versus.png "Logo Title Text 1")
 
 ### When the actual playing screen loads it would look something like this:
   The first is an example of the mockup using the actual pictures of the character. But the game will actually utilize the logos of each of the charactes.
