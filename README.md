@@ -6,7 +6,7 @@
 
 We have decided to create a Chess Game using the Java Language.
 This program is just supposed to replicate the design of a chess game like one you would find on an app on your phone or on the computer. It's not as fancy with as many special effects as some other games but it still has many cool features.
-*
+
 ## Basic Rules
 
 Chess is a two player game. One person controls one set of peices (black pieces) and the other player controls the opposite set of pieces (white pieces). Players cannot switch set of pieces midgame. The goal of the game is to get the other player's King into checkmate.
@@ -34,8 +34,7 @@ void setup() {
   size(1920, 1080);
   screenX = round(width);
   screenY = round(height);
-  size(screenX, screenY);
-  startmenu = loadImage("Versus.png");
+  size(screenX, screenY);  startmenu = loadImage("Versus.png");
   image(startmenu, 0, 0, screenX, screenY);
   title = createFont("Anurati-Regular", 80, true);
   description = createFont("Anurati-Regular", 30, true);
@@ -52,7 +51,7 @@ void draw() {
 
 ### This is what the start menu would look like:
 
-![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/Versus.png "Logo Title Text 1")
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/versus.png "Logo Title Text 1")
 
 ### When the actual playing screen loads it would look something like this:
   The first is an example of the mockup using the actual pictures of the character. But the game will actually utilize the logos of each of the charactes.
