@@ -262,15 +262,15 @@ public class Rook extends Piece {
       return false;
     }
     if(Math.abs(toX - fromX) > 1 || Math.abs(toY - fromY) > 1) {
-      if(moved) {
+
+if(moved) {
         return false;
       }
       if(toX == fromX) {
         return true;
       }
       if(toY == fromY) {
-        return true;
-      }
+        return true;      }
       return false;
     }
   }
@@ -290,9 +290,56 @@ if(fromY - toY == 2 & fromX == toX) {
   castle = false;
   return false;
 }
-castle = true;
-// moved = true;
+castle = true;// moved = true;
 return true;
+```
+
+Code for Pawn Piece:
+
+```javascript
+public class Pawn extends Piece {
+  public boolean hasMoved;
+  public boolean ep_able;
+  public boolean switch;
+  public Pawn(boolean available, int x, int y) {
+    super(available, x, y);
+  }
+  
+  @Override
+  public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
+    if(fromX == toX) {
+      if(board[fromY + 1][fromX] != null) {
+        return false;
+      }
+    } else {
+      if(board[fromY - 1][fromX != null) {
+        return false;
+      }
+    }
+    if(Math.abs(toY - fromY) > 2) {
+      return false;
+    } else if(Math.abs(toY - fromY == 2)) {
+      if(hasMoved) {
+        return false;
+      }
+      if(toX + 1 < 8) {
+        if(board[toY][toX + 1] != null) {
+          if(board[toY][toX + 1].getClass().isInstance(new Pawn ("marvel"))) {
+            ep_able = true;
+          }
+        }
+      }
+    }
+  } else {
+    if(Math.abs(toX - fromX) != 1 || Math.abs(toY - fromY) != 1) {
+      return false;
+    }
+    if(board[toY][toX] == null) {
+      return false;
+    }
+  }
+  return true;
+}
 ```
 You can use the [editor on GitHub](https://github.com/nastassjamotro/Programming-1-Portfolio/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
