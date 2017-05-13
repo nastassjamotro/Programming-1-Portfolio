@@ -67,9 +67,8 @@ void draw() {
 ### The Characters on the DC side are:
 
 * Martian Manhunter - as the king
-
+e
 * Wonder Woman - as the queen
-
 * SuperGirl - as the bishop
 
 * Batman - as the knight
@@ -78,20 +77,87 @@ void draw() {
 
 * Flash - as the pawn
 
-### The Characters on the Marvel side are:
+s### The Characters on the Marvel side are:
 
 * Captain America - as the king
-
 * Captain Marvel - as the queen
 
 * Black Widow - as the bishop
 
 * Wolverine - as the knight
 
-* Iron Man - as the rook
+J* Iron Man - as the rook
+l* Hawkeye - as the pawn
 
-* Hawkeye - as the pawn
+## Here are the rules for the pieces:
 
+* King - The King moves only one square in any direction: horizontally, vertically, or diagonally. The King can do a special move called castling but it may only be done with the use of the rook. The King is the most important piece of the game, and moves must be made in such a way that the king is never in check. If in check, the king must move and not any other piece.
+* Queen - The Queen has combined moves of the rook and bishop so i.e. it can move horizontally, diagonally, and vertically.
+
+* Bishop - The Bishop moves diagonally and only on the color it starts off on. It may not jump over pieces.
+
+* Knight - The Knight makes a move that consists of first one step in a horizontal or vertical direction, and then one step diagonally in an outward direction.
+e
+* Rook - The Rook moves in a straight line, wheter it's horizontal movement or vertical. It cannot move diagonally.
+* Pawn - The Pawn moves differently regarding whether it moves to an empty square or wheter it takes a piece of the opponent. When a Pawn does not take, it moves one square forward. When the Pawn has not moved at all, i.e., the Pawn is still at the second row (from the owning player's view), the Pawn may make a double step straight forward. When taking, a pawn goes one square diagonally forward.
+
+### Special Moves:
+
+* Castling - Under certain, special rules, a King and Rook can move simultaniously in a castling move. The following conditions must be met:
+
+1. The King that makes the castling move has not yet moved in the game.
+2. The Rook that makes the castling move has not yet moved in the game.
+ 3. The King is not in check.
+4. The King does not move over a square that is attacked by an enemy piece during the castling move, i.e., when castling, there may not be an enemy piece that can move (in case of Pawns: by diagonal movement) to a square that is moved over by the King.
+5. The King does not move to a square that is attacked by an enemy piece during the castling move, i.e., you may not castle and end the move with the King in check.
+6. All squares between the Rook and King before the castling move are empty.
+7. The King and Rook must occupy the same rank (or row).
+8. When castling, the King moves two squares towards the Rook, and the Rook moves over the King to the next square.
+
+Code for King Piece with Castling Move:
+
+```javascript
+public class King extends Piece {
+  public booelan moved;
+  public boolean castle;
+  public King(boolean available, int x, int y) {
+    suepr(available, x, y);
+    this.moved = false;
+    this.castle = false;
+  }
+  
+  @Override
+  public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
+    if(super.isValid(board, fromX, fromY, toX, toY) == false) {
+      return false;
+    }
+    if(Math.abs(toX - fromX) > 1 || Math.abs(toY - fromY) > 1) {
+      if (moved) {
+        return false;
+      }
+      return false;
+    }
+  }
+}
+
+if(fromY - toY == 2 && fromX == toX) {
+  if(board[fromX][fromY + 1] != null || board{toX][toY + 2] != null) {
+    castle = false;
+    return false;
+  }
+} else if (fromY - toY == 3 && fromX == toX) {
+  if(board[toX][fromY - 1] != null || board[toX][fromY - 2] != null || board[toX][fromY - 3] != null) {
+    castle = false;
+    return false;
+  }
+} else {
+  castle = false;
+  return false;
+}
+castle = true;
+//moved = true;
+return true;
+```
 
 You can use the [editor on GitHub](https://github.com/nastassjamotro/Programming-1-Portfolio/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
