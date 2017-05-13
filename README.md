@@ -126,7 +126,7 @@ public class King extends Piece {
   public booelan moved;
   public boolean castle;
   public King(boolean available, int x, int y) {
-(    suepr(available, x, y);
+    super(available, x, y);
     this.moved = false;
     this.castle = false;
   }
