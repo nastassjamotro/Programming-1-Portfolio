@@ -119,7 +119,7 @@ void draw() {
 7. The King and Rook must occupy the same rank (or row).
 8. When castling, the King moves two squares towards the Rook, and the Rook moves over the King to the next square.
 
-Code for King Piece with Castling Move:
+*Code for King Piece with Castling Move:*
 
 ```javascript
 public class King extends Piece {
@@ -166,7 +166,7 @@ castle = true;
 return true;
 ```
 
-Code for Queen Piece:
+*Code for Queen Piece:*
 
 
 ```javascript
@@ -195,7 +195,7 @@ public class Queen extends Piece {
 }
 ```
 
-Code for Bishop Piece:
+*Code for Bishop Piece:*
 
 ```javascript
 public class Bishop extends Piece {
@@ -216,7 +216,7 @@ public class Bishop extends Piece {
 }
 ```
 
-Code for Knight Piece:
+*Code for Knight Piece:*
 
 ```javascript
 public class Knight extends Piece {
@@ -241,7 +241,7 @@ public class Knight extends Piece {
 }
 ```
 
-Code for Rook Piece with Castling:
+*Code for Rook Piece with Castling:*
 
 ```javascript
 public class Rook extends Piece {
@@ -294,7 +294,7 @@ castle = true;// moved = true;
 return true;
 ```
 
-Code for Pawn Piece:
+*Code for Pawn Piece:*
 
 ```javascript
 public class Pawn extends Piece {
