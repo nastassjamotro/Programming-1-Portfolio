@@ -307,7 +307,7 @@ public class Pawn extends Piece {
         return false;
       }
     } else {
-      if(board[fromY - 1][fromX != null) {
+      if(board[fromY - 1][fromX] != null) {
         return false;
       }
     }
