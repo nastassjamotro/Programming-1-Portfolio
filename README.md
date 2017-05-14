@@ -55,9 +55,8 @@ void draw() {
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/Versus.png "Logo Title Text 1")
 
 ### When the actual playing screen loads it would look something like this:
-  The first is an example of the mockup using the actual pictures of the character. But the game will actually utilize the logos of each of the charactes.
+  The first is an example of the mockup using the actual pictures of the character.
   
-
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/figuresmockup.png "Logo Title Text 1")
 
   But the game will actually utilize the logos of each of the characters.
@@ -132,8 +131,7 @@ public class King extends Piece {
   }
   
   @Override
-
-public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
+  public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
     if(super.isValid(board, fromX, fromY, toX, toY) == false) {
       return false;
     }
