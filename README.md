@@ -149,7 +149,7 @@ public class Board {
 **Code for Spot:**
 
 ```javascript
-public class Spot {
+apublic class Spot {
   int x, y;
   Piece piece;
   
@@ -181,6 +181,38 @@ public class Spot {
     return releasedPiece;
   }
 }
+```
+
+## Players
+
+(insert details here)
+
+**Code for Player:**
+
+```javascript
+public class Player {
+  public final int PAWNS = 8;
+  public final int BISHOPS = 2;
+  public final int ROOKS = 2;
+  public final int KNIGHTS = 2;
+  public boolean marvel;
+  
+  private List<Piece> pieces = new ArrayList<>();
+  
+  public Player(boolean marvel) {
+    super();
+    this.marvel = marvel;
+  }
+  
+  public List<Piece> getPieces() {
+    return pieces;
+  }
+  
+  public void initializePieces() {
+    if(this.marvel == true) {
+      for(int i=0; i<PAWNS; i++) { // draw pawns
+        pieces.add(new Pawn(true, i, 2));
+      } 
 ```
 
 ### The Characters on the DC side are:
