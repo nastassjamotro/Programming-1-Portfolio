@@ -89,8 +89,7 @@ public class Chess {
       this.marvel = marvel;
     }
     public Player getDc() {
-      return dc;
-    }
+      return dc;    }
     public void SetDc(Player dc) {
       this.dc = dc;
     }
@@ -127,7 +126,20 @@ public class Chess {
 **Code for Board:**
 
 ```javascript
-
+public class Board {
+  private Spot[][] spots = new Spot[8][8];
+  public Board() {
+    super();
+    for(int i=0; i<spots.length; i++) {
+      for(int j=0; j<spots.length; j++) {
+        this.spots[i][j] = new Spots(i, j);
+      }
+    }
+  }
+  public Spot getSpot(int x, int y) {
+    return spots[x][y];
+  }
+}
 ```
 
 ### Spot
@@ -137,7 +149,38 @@ public class Chess {
 **Code for Spot:**
 
 ```javascript
-
+public class Spot {
+  int x, y;
+  Piece piece;
+  
+  public Spot(int x, int y) {
+    super();
+    this.x = x;
+    this.y = y;
+    piece = null;
+  }
+  
+  public void occupySpot(Piece piece) {
+    //if there's already a piece there, delete it (taking away the piece)
+    if(this.piece != null) {
+      this.piece.setAvailable(false);
+    }
+    //place piece there
+    this.piece = piece;
+  }
+  public boolean isOccupied() {
+    if(piece != null) {
+      return true;
+    }
+    return false;
+  }
+  
+  public Piece releasedSpot() {
+    Piece releasedPiece = this.piece;
+    this.piece = null;
+    return releasedPiece;
+  }
+}
 ```
 
 ### The Characters on the DC side are:
