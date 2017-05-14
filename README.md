@@ -109,7 +109,9 @@ public class Chess {
 }
 ```
 
-### When the actual playing screen loads it would look something like this:
+## Playing Screen
+
+#### When the actual playing screen loads it would look something like this:
   The first is an example of the mockup using the actual pictures of the character.
   
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/figuresmockup.png "Logo Title Text 1")
@@ -117,6 +119,26 @@ public class Chess {
   But the game will actually utilize the logos of each of the characters.
   
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/logosmockup.png "Logo Title Text 1")
+
+### Board
+
+(insert details here)
+
+**Code for Board:**
+
+```javascript
+
+```
+
+### Spot
+
+(insert details here)
+
+**Code for Spot:**
+
+```javascript
+
+```
 
 ### The Characters on the DC side are:
 
