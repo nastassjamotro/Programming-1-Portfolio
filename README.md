@@ -15,7 +15,7 @@ Chess is a two player game. One person controls one set of peices (black pieces)
 
 * check - When the King of a player can be taken by a piece of the opponent, one says that the King is in check. It is not allowed to make a move, such that ones King is in check after the move.
 
-* checkmate - When a player is in check, and he cannot make a move such that after the move, the King is not in check, then he is mated. The player that is mated loses teh game, and the player that mates him wins the game.
+* checkmate - When a player is in check, and he cannot make a move such that after the move, the King is not in check, then he is mated. The player that is mated loses the game, and the player that mates him wins the game.
 
 * stalemate - When a player cannot make any legal move, but he is not in check, then the player is said to be stalemated. In a case of a stalemate, the game is a draw.
 
