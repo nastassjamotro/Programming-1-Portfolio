@@ -213,7 +213,7 @@ public class Player {
       for(int i=0; i<PAWNS; i++) { // draw pawns
         pieces.add(new Pawn(true, i, 2));
       } 
-      pieces.add(new Rook(true, 0, 0));
+}      pieces.add(new Rook(true, 0, 0));
       pieces.add(new Rook(true, 7, 0));
       pieces.add(new Bishop(true, 2, 0));
       pieces.add(new Bishop(true, 5, 0));
@@ -234,6 +234,56 @@ public class Player {
       pieces.add(new Queen(true, 3, 7));
       pieces.add(new King(true, 4, 7));
     }
+  }
+}
+```
+
+## Piece
+
+(insert details here)
+
+**Code for Main Piece Class:**
+
+```javascript
+public class Piece {
+  private boolean available;
+  private int x;
+  private int y;
+  
+  public Piece(boolean available, int x, int y) {
+    super();
+    this.available = available;
+    this.x = x;
+    this.y = y;
+  }
+  
+  public boolean isAvailable() {
+    return available;
+  }
+  public void setAvailable(boolean available) {
+    this.available = available;
+  }
+  public int getX() {
+    return x;
+  }
+  public void setX(int x) {
+    this.x = x;
+  }
+  public int getY() {
+    return y;
+  }
+  pubic void setY(int y) {
+    this.y = y;
+  }
+  
+  public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
+    if(toX == fromX && toY == fromY) {
+      return false; //move nothing
+    }
+    if(toX < 0 || toX > 7 || fromX < 0 || fromX > 7 || toY < 0 || toY > 7 || fromY < 0 || fromY > 7) {
+      return false;
+    }
+    return true;
   }
 }
 ```
