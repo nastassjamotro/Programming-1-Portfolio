@@ -33,7 +33,8 @@ void setup() {
   size(1920, 1080);
   screenX = round(width);
   screenY = round(height);
-  size(screenX, screenY);  startmenu = loadImage("Versus.png");
+  size(screenX, screenY);  
+  startmenu = loadImage("Versus.png");
   image(startmenu, 0, 0, screenX, screenY);
   title = createFont("Anurati-Regular", 80, true);
   description = createFont("Anurati-Regular", 30, true);
@@ -135,7 +136,8 @@ public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
     if(super.isValid(board, fromX, fromY, toX, toY) == false) {
       return false;
     }
-    if(Math.abs(toX - fromX) > 1 || Math.abs(toY - fromY) > 1) {      if (moved) {
+    if(Math.abs(toX - fromX) > 1 || Math.abs(toY - fromY) > 1) {      
+      if (moved) {
         return false;
       }
       return false;
@@ -144,7 +146,7 @@ public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
 }
 
 if(fromY - toY == 2 && fromX == toX) {
-  if(board[fromX][fromY + 1] != null || board{toX][toY + 2] != null) {
+  if(board[fromX][fromY + 1] != null || board[toX][toY + 2] != null) {
     castle = false;
     return false;
   }
@@ -154,8 +156,7 @@ if(fromY - toY == 2 && fromX == toX) {
     return false;
   }
 } else {
-
-castle = false;
+  castle = false;
   return false;
 }
 castle = true;
@@ -174,7 +175,7 @@ public class Queen extends Piece {
   @Override
   public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
     if(super.isValid(board, fromX, fromY, toX, toY) == false) {
-*      return false;
+      return false;
     }
     // diagonal stuff
     if(toX - fromX == toY - fromY) {
@@ -225,7 +226,6 @@ public class Knight extends Piece {
     if(super.isValid(board, fromX, fromY, toX, toY) == false) {
       return false;
     }
-    
     if(toX != fromX - 1 && toX != fromX + 1 && toX != fromX + 2 && toX != fromX - 2) {
       return false;
     }
@@ -258,8 +258,7 @@ public class Rook extends Piece {
       return false;
     }
     if(Math.abs(toX - fromX) > 1 || Math.abs(toY - fromY) > 1) {
-
-if(moved) {
+      if(moved) {
         return false;
       }
       if(toX == fromX) {
