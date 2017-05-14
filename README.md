@@ -2,7 +2,7 @@
 ## Nastassja Motro 2017
 ### With Bryn Esperson and Tessa Vu
 
-## Our Game
+v## Our Game
 
 We have decided to create a Chess Game using the Java Language.
 This program is just supposed to replicate the design of a chess game like one you would find on an app on your phone or on the computer. It's not as fancy with as many special effects as some other games but it still has many cool features.
@@ -53,6 +53,61 @@ void draw() {
 ### This is what the start menu would look like:
 
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/Versus.png "Logo Title Text 1")
+
+## Game
+
+(insert detail here)
+
+**Code For Main Chess Game Entry Point:**
+
+```javascript
+public class Chess {
+  public static void main(String[] args) {
+    private Board board = new Board();
+    private Player marvel;
+    private Player dc;
+    public Chess() {
+      super();
+    }
+    
+    public void setColorMarvel(Player player) {
+      this.marvel = player;
+    }
+    public void setColorDc(Player player) {
+      this.dc = player;
+    }
+    public Board getBoard() {
+      return board;
+    }
+    public void setBoard(Board board) {
+      this.board = board;
+    }
+    public Player getMarvel() {
+      return marvel;
+    }
+    public void setMarvel(Player marvel) {
+      this.marvel = marvel;
+    }
+    public Player getDc() {
+      return dc;
+    }
+    public void SetDc(Player dc) {
+      this.dc = dc;
+    }
+    
+    public boolean initializeBoardGivenPlayer() {
+      if(this.dc == null || this.marvel == null) {
+        return false;
+      }
+      this.board = new Board();
+      for(int i=0; i<dc.getPieces().size(); i++) {
+        board.getSpot(dc.getPieces().get(i).getX(), dc.getPieces().get(i).getY()).occupySpot(dc.getPieces().get(i));
+      }
+      return true;
+    }
+  }
+}
+```
 
 ### When the actual playing screen loads it would look something like this:
   The first is an example of the mockup using the actual pictures of the character.
