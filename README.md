@@ -2,7 +2,7 @@
 ## Nastassja Motro 2017
 ### With Bryn Esperson and Tessa Vu
 
-v## Our Game
+## Our Game
 
 We have decided to create a Chess Game using the Java Language.
 This program is just supposed to replicate the design of a chess game like one you would find on an app on your phone or on the computer. It's not as fancy with as many special effects as some other games but it still has many cool features.
