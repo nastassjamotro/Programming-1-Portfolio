@@ -56,7 +56,7 @@ void draw() {
 
 ## Game
 
-(insert detail here)
+In Chess, the white set (in this case the marvel pieces) is always first to move. Movement is required every round. A player may not opt to skip his or her turn ever.
 
 **Code For Main Chess Game Entry Point:**
 
@@ -122,7 +122,7 @@ public class Chess {
 
 ### Board
 
-(insert details here)
+A chessboard is a type of checkerboard. It consists of 64 squares (eight rows and eight columns). The squares are arranged in two alternating colors (light and dark).
 
 **Code for Board:**
 
@@ -145,7 +145,7 @@ public class Board {
 
 ### Spot
 
-(insert details here)
+Pieces other than pawns capture in the same way they move. A capturing peice replaces the opponent's piece on its square, except for an _en passant_ capture. Captured pieces are immediately removed from the game. A square may hold ony one piece at any given time. 
 
 **Code for Spot:**
 
@@ -186,7 +186,7 @@ apublic class Spot {
 
 ## Players
 
-(insert details here)
+Chess involves two players. PLayers take turns alternating moving one piece at a time (except in the case of the castle maneuver).
 
 **Code for Player:**
 
@@ -241,7 +241,7 @@ public class Player {
 
 ## Piece
 
-(insert details here)
+All the separate chess pieces classes in this game use inheritance from the class Piece below. There are a total of sixteen pieces per player: one King, one Queen, two Bishops, two Knights, two Rooks, and eight Pawns. Each player controls their own set and may not play or use the other player's set.
 
 **Code for Main Piece Class:**
 
@@ -336,13 +336,28 @@ public class Piece {
 * Castling - Under certain, special rules, a King and Rook can move simultaniously in a castling move. The following conditions must be met:
 
 1. The King that makes the castling move has not yet moved in the game.
+  
 2. The Rook that makes the castling move has not yet moved in the game.
- 3. The King is not in check.
+
+3. The King is not in check.
+
 4. The King does not move over a square that is attacked by an enemy piece during the castling move, i.e., when castling, there may not be an enemy piece that can move (in case of Pawns: by diagonal movement) to a square that is moved over by the King.
+
 5. The King does not move to a square that is attacked by an enemy piece during the castling move, i.e., you may not castle and end the move with the King in check.
+
 6. All squares between the Rook and King before the castling move are empty.
+
 7. The King and Rook must occupy the same rank (or row).
+
 8. When castling, the King moves two squares towards the Rook, and the Rook moves over the King to the next square.
+
+* _En passant_ - This is perhaps the most obscure and least used move in chess is called _en passant_.
+
+- It can only occur when a player excersizes his option to move his pawn two squares on its initial movement and that move places his pawn next to the opponent's pawn.
+
+- When this happens, the opposing player has the option to use his pawn to take the moved pawn "en passant" or "in passing" as if the pawn had only moved one square.
+
+- This option, though, only stays open for one move.
 
 **Code for King Piece with Castling Move:**
 
