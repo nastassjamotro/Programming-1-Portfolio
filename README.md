@@ -89,7 +89,8 @@ public class Chess {
       this.marvel = marvel;
     }
     public Player getDc() {
-      return dc;    }
+      return dc;    
+    }
     public void SetDc(Player dc) {
       this.dc = dc;
     }
@@ -213,7 +214,7 @@ public class Player {
       for(int i=0; i<PAWNS; i++) { // draw pawns
         pieces.add(new Pawn(true, i, 2));
       } 
-}      pieces.add(new Rook(true, 0, 0));
+      pieces.add(new Rook(true, 0, 0));
       pieces.add(new Rook(true, 7, 0));
       pieces.add(new Bishop(true, 2, 0));
       pieces.add(new Bishop(true, 5, 0));
