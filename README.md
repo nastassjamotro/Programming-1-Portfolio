@@ -333,25 +333,25 @@ public class Piece {
 
 ### Special Moves:
 
-* Castling - Under certain, special rules, a King and Rook can move simultaniously in a castling move. The following conditions must be met:
+#### Castling - Under certain, special rules, a King and Rook can move simultaniously in a castling move. The following conditions must be met:
 
-1. The King that makes the castling move has not yet moved in the game.
+- The King that makes the castling move has not yet moved in the game.
   
-2. The Rook that makes the castling move has not yet moved in the game.
+- The Rook that makes the castling move has not yet moved in the game.
 
-3. The King is not in check.
+- The King is not in check.
 
-4. The King does not move over a square that is attacked by an enemy piece during the castling move, i.e., when castling, there may not be an enemy piece that can move (in case of Pawns: by diagonal movement) to a square that is moved over by the King.
+- The King does not move over a square that is attacked by an enemy piece during the castling move, i.e., when castling, there may not be an enemy piece that can move (in case of Pawns: by diagonal movement) to a square that is moved over by the King.
 
-5. The King does not move to a square that is attacked by an enemy piece during the castling move, i.e., you may not castle and end the move with the King in check.
+- The King does not move to a square that is attacked by an enemy piece during the castling move, i.e., you may not castle and end the move with the King in check.
 
-6. All squares between the Rook and King before the castling move are empty.
+- All squares between the Rook and King before the castling move are empty.
 
-7. The King and Rook must occupy the same rank (or row).
+- The King and Rook must occupy the same rank (or row).
 
-8. When castling, the King moves two squares towards the Rook, and the Rook moves over the King to the next square.
+- When castling, the King moves two squares towards the Rook, and the Rook moves over the King to the next square.
 
-* _En passant_ - This is perhaps the most obscure and least used move in chess is called _en passant_.
+#### _En passant_ - This is perhaps the most obscure and least used move in chess is called _en passant_.
 
 - It can only occur when a player excersizes his option to move his pawn two squares on its initial movement and that move places his pawn next to the opponent's pawn.
 
