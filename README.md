@@ -116,7 +116,7 @@ s    private Board board = new Board();
   
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/figuresmockup.png "Logo Title Text 1")
 
-  But the game will actually utilize the logos of each of the characters.
+  But the game will actually utilize the logos of each of the characters as seen below.
   
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/logosmockup.png "Logo Title Text 1")
 
