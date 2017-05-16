@@ -1,6 +1,7 @@
 # Programming 1 Portfolio
 ## Nastassja Motro 2017
 ### With Bryn Esperson and Tessa Vu
+### Contact Info: nastassjamotro7@gmail.com
 
 ## Our Game
 
