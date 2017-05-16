@@ -1,6 +1,6 @@
 # Programming 1 Portfolio
 ## Nastassja Motro 2017
-### With Bryn Esperson and Tessa Vu
+### Programmed With Bryn Esperson and Tessa Vu
 ### Contact Info-email: nastassjamotro7@gmail.com
 ### Skyline High School
 #### To View The Website: https://nastassjamotro.github.io/Programming-1-Portfolio/
@@ -612,6 +612,8 @@ void draw() {
 ```
 
 **This is how it would look:**
+
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/win.png "Logo Title Text 1")
 
 **The following is Code for if the game will end with the Marvel winning and DC (your side) losing:**
 
