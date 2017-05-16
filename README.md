@@ -2,6 +2,7 @@
 ## Nastassja Motro 2017
 ### With Bryn Esperson and Tessa Vu
 ### Contact Info-email: nastassjamotro7@gmail.com
+### Skyline High School
 
 ## Our Game
 
