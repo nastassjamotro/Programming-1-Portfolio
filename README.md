@@ -477,7 +477,7 @@ public class Knight extends Piece {
 }
 ```
 
-**Code for Rook Piece with Castling:**
+**Code for Rook Piece with Castling Move:**
 
 ```javascript
 public class Rook extends Piece {
@@ -529,7 +529,7 @@ castle = true;// moved = true;
 return true;
 ```
 
-**Code for Pawn Piece:**
+**Code for Pawn Piece with _En Passant_ Move:**
 
 ```javascript
 public class Pawn extends Piece {
