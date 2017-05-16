@@ -327,7 +327,7 @@ public abstract class Piece {
 
 * Knight - The Knight makes a move that consists of first one step in a horizontal or vertical direction, and then one step diagonally in an outward direction.
 
-* Rook - The Rook moves in a straight line, wheter it's horizontal movement or vertical. It cannot move diagonally.
+* Rook - The Rook moves in a straight line, whether it's horizontal movement or vertical. It cannot move diagonally.
 
 * Pawn - The Pawn moves differently regarding whether it moves to an empty square or wheter it takes a piece of the opponent. When a Pawn does not take, it moves one square forward. When the Pawn has not moved at all, i.e., the Pawn is still at the second row (from the owning player's view), the Pawn may make a double step straight forward. When taking, a pawn goes one square diagonally forward.
 
