@@ -246,7 +246,7 @@ All the separate chess pieces classes in this game use inheritance from the clas
 **Code for Main Piece Class:**
 
 ```javascript
-public class Piece {
+public abstract class Piece {
   private boolean available;
   private int x;
   private int y;
@@ -258,26 +258,26 @@ public class Piece {
     this.y = y;
   }
   
-  public boolean isAvailable() {
+  public abstract boolean isAvailable() {
     return available;
   }
   public void setAvailable(boolean available) {
     this.available = available;
   }
-  public int getX() {
+  public abstract int getX() {
     return x;
   }
   public void setX(int x) {
     this.x = x;
   }
-  public int getY() {
+  public abstract int getY() {
     return y;
   }
   pubic void setY(int y) {
     this.y = y;
   }
   
-  public boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
+  public abstract boolean isValid(Board board, int fromX, int fromY, int toX, int toY) {
     if(toX == fromX && toY == fromY) {
       return false; //move nothing
     }
