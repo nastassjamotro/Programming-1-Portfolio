@@ -713,6 +713,6 @@ void draw() {
 
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/draw.png "Logo Title Text 1")
 
-## THE END :)
+## THE END
 
 # Hope you enjoy our game! :)
