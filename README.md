@@ -63,7 +63,7 @@ In Chess, the white set (in this case the marvel pieces) is always first to move
 ```javascript
 public class Chess {
   public static void main(String[] args) {
-    private Board board = new Board();
+s    private Board board = new Board();
     private Player marvel;
     private Player dc;
     public Chess() {
@@ -112,7 +112,7 @@ public class Chess {
 ## Playing Screen
 
 #### When the actual playing screen loads it would look something like this:
-  The first is an example of the mockup using the actual pictures of the character.
+  The first is an example of the mockup using the actual pictures of the characters.
   
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/figuresmockup.png "Logo Title Text 1")
 
