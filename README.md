@@ -241,7 +241,7 @@ public class Player {
 
 ## Piece
 
-All the separate chess pieces classes in this game use inheritance from the class Piece below. There are a total of sixteen pieces per player: one King, one Queen, two Bishops, two Knights, two Rooks, and eight Pawns. Each player controls their own set and may not play or use the other player's set.
+All the separate chess piece classes in this game use inheritance from the class Piece below. There are a total of sixteen pieces per player: one King, one Queen, two Bishops, two Knights, two Rooks, and eight Pawns. Each player controls their own set and may not play or use the other player's set.
 
 **Code for Main Piece Class:**
 
