@@ -51,7 +51,7 @@ void draw() {
 
 ### This is what the start menu would look like:
 
-![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/Versus.png "Logo Title Text 1")
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/versus.png "Logo Title Text 1")
 
 ## Game
 
@@ -608,6 +608,9 @@ void draw() {
   text("YOU ARE NOW A LOSER", width/2, 450);
 }
 ```
+**This is how it would look*
+
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/marvelwins.png "Logo Title Text 1")
 
 **The Following is Code for if the Game will end with DC Winning:**
 
@@ -638,6 +641,10 @@ void draw() {
 }
 ```
 
+**This is how it would look like**
+
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/dcwins.png "Logo Title Text 1")
+
 **The Following is Code for if the Game will end in a Draw:**
 
 ```javascript
@@ -666,5 +673,11 @@ void draw() {
   text("AT LEAST YOU DID NOT LOSE", width/2, 450);
 }
 ```
+
+**This is how it would look like**
+
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/draw.png "Logo Title Text 1")
+
+## THE END :)
 
 # Hope you enjoy our game! :)
