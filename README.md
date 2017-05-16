@@ -291,7 +291,7 @@ public abstract class Piece {
 }
 ```
 
-### The Characters on the DC side are:
+### The Characters on the DC (black) side are:
 
 * Martian Manhunter - as the king
 
@@ -305,7 +305,7 @@ public abstract class Piece {
 
 * Flash - as the pawn
 
-### The Characters on the Marvel side are:
+### The Characters on the Marvel (white) side are:
 
 * Captain America - as the king
 
@@ -570,7 +570,7 @@ public class Pawn extends Piece {
   } else {
     if(Math.abs(toX - fromX) != 1 || Math.abs(toY - fromY) != 1) {
       return false;
-    }
+     }
     if(board[toY][toX] == null) {
       return false;
     }
@@ -583,7 +583,37 @@ public class Pawn extends Piece {
 
 Chess ends as soon as one player get the opponent's King in checkmate, or when the game ends in a draw. As soon as this happends, the screen will change from the chessboard graphics to an end game graphic.
 
-**The Following is Code for if the Game will end with the Marvel Winning:**
+**The following is Code for if your side wins the game:**
+
+```javascript
+PImage win;
+PFont title;
+PFont description;
+int screenX, screenY, stage;
+
+void setup() {
+  size(1920, 1080);
+  screenX = round(width);
+  screenY = round(height);
+  size(screenX, screenY);
+  win = loadImage("Versus.png");
+  image(win, 0, 0, screenX, screenY);
+  title = createFont("Anurati-Regular", 80, true);
+  description = createFont("Anurati-Regular", 30, true);
+}
+
+void draw() {
+  textAlign(CENTER);
+  textFont(title);
+  text("VICTORY", width/2, 400);
+  textFont(description);
+  text("YOU ARE A WINNER", width/2, 450);
+}
+```
+
+**This is how it would look:**
+
+**The following is Code for if the game will end with the Marvel winning and DC (your side) losing:**
 
 ```javascript
 PImage gameover;
@@ -615,7 +645,7 @@ void draw() {
 
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/marvelwins.png "Logo Title Text 1")
 
-**The Following is Code for if the Game will end with DC Winning:**
+**The following is Code for if the game will end with DC winning and Marvel (your side) losing:**
 
 ```javascript
 PImage gameover;
@@ -648,7 +678,7 @@ void draw() {
 
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/dcwins.png "Logo Title Text 1")
 
-**The Following is Code for if the Game will end in a Draw:**
+**The following is Code for if the game will end in a Draw/Stalemate:**
 
 ```javascript
 PImage gameover;
