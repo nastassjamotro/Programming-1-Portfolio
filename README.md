@@ -186,7 +186,7 @@ apublic class Spot {
 
 ## Players
 
-Chess involves two players. PLayers take turns alternating moving one piece at a time (except in the case of the castle maneuver).
+Chess involves two players. Players take turns alternating moving one piece at a time (except in the case of the castle maneuver).
 
 **Code for Player:**
 
