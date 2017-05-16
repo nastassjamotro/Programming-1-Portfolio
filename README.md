@@ -4,8 +4,7 @@
 
 ## Our Game
 
-We have decided to create a Chess Game using the Java Language.
-This program is just supposed to replicate the design of a chess game like one you would find on an app on your phone or on the computer. It's not as fancy with as many special effects as some other games but it still has many cool features.
+We have decided to create a Chess Game using the Java Language. But we made is so that this would be running on the Processing app as it is good to use when dealing with graphics. This program is just supposed to replicate the design of a chess game like one you would find on an app on your phone or on the computer. It's not as fancy with as many special effects as some other games but it still has many cool features.
 
 ## Basic Rules
 
@@ -581,10 +580,91 @@ public class Pawn extends Piece {
 
 Chess ends as soon as one player get the opponent's King in checkmate, or when the game ends in a draw. As soon as this happends, the screen will change from the chessboard graphics to an end game graphic.
 
-**Code for End Game Menu:**
+**The Following is Code for if the Game will end with the Marvel Winning:**
 
 ```javascript
+PImage gameover;
+PFont title;
+PFont description;
+int screenX, screenY, stage;
 
+void setup() {
+  size(1920, 1080);
+  screenX = round(width);
+  screenY = round(height);
+  size(sreenX, screenY);
+  gamover = loadImage("Versus.png");
+  image(gameover, 0, 0, screenX, screenY);
+  title = createFont("Anurati-Regular", 80, true);
+  description = createFont("Anurati-Regular", 30, true);
+}
+
+void draw() {
+  textAlign(CENTER);
+  textFont(title);
+  text("MARVEL WINS", width/2, 310);
+  text("GAME OVER", width/2, 400);
+  textFont(description);
+  text("YOU ARE NOW A LOSER", width/2, 450);
+}
+```
+
+**The Following is Code for if the Game will end with DC Winning:**
+
+```javascript
+PImage gameover;
+PFont title;
+PFont description;
+int screenX, screenY, stage;
+
+void setup() {
+  size(1920, 1080);
+  screenX = round(width);
+  screenY = round(height);
+  size(screenX, screenY);
+  gameover = loadImage("Versus.png");
+  image(gameover, 0, 0, screenX, screenY);
+  title = createFont("Anurati-Regular", 80, true);
+  description = createFont("Anurati-Regular", 30, true);
+}
+
+void draw() {
+  textAlight(CENTER);
+  textFont(title);
+  text("DC WINS", width/2, 310);
+  text("GAME OVER", width/2, 400);
+  textFont(description);
+  text("YOU ARE NOW A LOSER", width/2, 450);
+}
+```
+
+**The Following is Code for if the Game will end in a Draw:**
+
+```javascript
+PImage gameover;
+PFont title;
+PFont description;
+int screenX, screenY, stage;
+
+void setup() {
+  size(1920, 1080);
+  screenX = round(width);
+  screenY = round(height);
+  size(screenX, screenY);
+  gameover = loadImage("Versus.png");
+  image(gameover, 0, 0, screenX, screenY);
+  title = createFont("Anurati-Regular", 80, true);
+  description = createFont("Anurati-Regular", 30, true);
+}
+
+void draw() {
+  textAlign(CENTER);
+  textFont(title);
+  text("DRAW", width/2, 310);
+  text("STALEMATE REACHED", width/2, 400);
+  textFont(description);
+  text("AT LEAST YOU DID NOT LOSE", width/2, 450);
+}
 ```
 
 # Hope you enjoy our game! :)
