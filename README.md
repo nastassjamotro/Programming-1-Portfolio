@@ -65,7 +65,7 @@ In Chess, the white set (in this case the marvel pieces) is always first to move
 ```javascript
 public class Chess {
   public static void main(String[] args) {
-s    private Board board = new Board();
+    private Board board = new Board();
     private Player marvel;
     private Player dc;
     public Chess() {
