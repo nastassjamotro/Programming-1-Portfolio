@@ -7,13 +7,13 @@
 
 Tessa Vu contributed with designing graphics for chess pieces with Adobe Illustrator and Adobe Photoshop, programming the special castling movement on the King and Rook, and programming the start menu and end menus on Processing.
 
-Bryn Esperson contributed with programming code, specifically the Pawn pieces with the special _en passant_ movement.
+Bryn Esperson contributed with programming code, specifically the Pawn piece with the special _en passant_ movement.
 
 I contributed with programming all the basic movements of all the pieces excluding special moves, and programming code for the general parts of the game like the board and player and such.
 
 ## Our Game
 
-We have decided to create a Chess Game using the Java Language. But we made is so that this would be running on the Processing app as it is good to use when dealing with graphics. This program is just supposed to replicate the design of a chess game like one you would find on an app on your phone or on the computer. It's not as fancy with as many special effects as some other games but it still has many cool features.
+We have decided to create a Chess Game using the Java Language. But we made is so that this would be runnable on the Processing app as Processing is ideal to use when dealing with graphics. This program is supposed to replicate the design of a chess game like one you would find on an app on your phone or on the computer. It's not as fancy with as many special effects as some other games but it still has many cool features.
 
 ## Basic Rules
 
@@ -21,14 +21,15 @@ Chess is a two player game. One person controls one set of peices (black pieces)
 
 ### Check, Checkmate, and Stalemate
 
-* check - When the King of a player can be taken by a piece of the opponent, one says that the King is in check. It is not allowed to make a move, such that ones King is in check after the move.
+* Check - When the King of a player can be taken by a piece of the opponent, one says that the King is in check. It is not allowed to make a move, such that ones King is in check after the move.
 
-* checkmate - When a player is in check, and he cannot make a move such that after the move, the King is not in check, then he is mated. The player that is mated loses the game, and the player that mates him wins the game.
+* Checkmate - When a player is in check, and he cannot make a move such that after the move, the King is not in check, then he is mated. The player that is mated loses the game, and the player that mates him wins the game.
 
-* stalemate - When a player cannot make any legal move, but he is not in check, then the player is said to be stalemated. In a case of a stalemate, the game is a draw.
+* Stalemate - When a player cannot make any legal move, but he is not in check, then the player is said to be stalemated. In a case of a stalemate, the game is a draw.
 
 ## Starter
-The game starts off with a main menu screen. We decided to create a theme based game. The theme is Marvel vs. DC with Marvel being the white designated set of pieces and DC being the black designated set of pieces. As soon as the game is opened, the starter menu will pop open.
+
+The game starts off with a main menu screen. We decided to create a theme based game. The theme is Marvel vs. DC, with Marvel being the white designated set of pieces and DC being the black designated set of pieces. As soon as the game is opened, the starter menu will pop open.
 
 **Code for Starter Menu:**
 
@@ -120,6 +121,7 @@ public class Chess {
 ## Playing Screen
 
 #### When the actual playing screen loads it would look something like this:
+
   The first is an example of the mockup using the actual pictures of the characters.
   
 ![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/figuresmockup.png "Logo Title Text 1")
@@ -249,7 +251,7 @@ public class Player {
 
 ## Piece
 
-All the separate chess piece classes in this game use inheritance from the class Piece below. There are a total of sixteen pieces per player: one King, one Queen, two Bishops, two Knights, two Rooks, and eight Pawns. Each player controls their own set and may not play or use the other player's set.
+All the separate chess piece classes in this game use inheritance from the super class Piece below. There are a total of sixteen pieces per player: one King, one Queen, two Bishops, two Knights, two Rooks, and eight Pawns. Each player controls their own set and may not play or use the other player's set.
 
 **Code for Main Piece Class:**
 
@@ -359,7 +361,7 @@ public abstract class Piece {
 
 - When castling, the King moves two squares towards the Rook, and the Rook moves over the King to the next square.
 
-#### _En passant_ - This is perhaps the most obscure and least used move in chess is called _en passant_.
+#### _En passant_ - This is perhaps the most obscure and least used move in chess.
 
 - It can only occur when a player excersizes his option to move his pawn two squares on its initial movement and that move places his pawn next to the opponent's pawn.
 
@@ -587,7 +589,7 @@ public class Pawn extends Piece {
 
 ## End Menu
 
-Chess ends as soon as one player get the opponent's King in checkmate, or when the game ends in a draw. As soon as this happends, the screen will change from the chessboard graphics to an end game graphic.
+Chess ends as soon as one player get the opponent's King in checkmate, or when the game ends in a draw. As soon as this happens, the screen will change from the chessboard graphics to an end game graphic.
 
 **The following is Code for if your side wins the game:**
 
