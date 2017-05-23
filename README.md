@@ -1,9 +1,15 @@
-# Programming 1 Portfolio
-## Nastassja Motro 2017
+# Programming 1 Portfolio 2016-1017
+## Nastassja Motro
 ### Programmed With Bryn Esperson and Tessa Vu
 ### Contact Info-email: nastassjamotro7@gmail.com
 ### Skyline High School
 #### To View The Website: https://nastassjamotro.github.io/Programming-1-Portfolio/
+
+Tessa Vu contributed with designing graphics for chess pieces with Adobe Illustrator and Adobe Photoshop, programming the special castling movement on the King and Rook, and programming the start menu and end menus on Processing.
+
+Bryn Esperson contributed with programming code, specifically the Pawn pieces with the special _en passant_ movement.
+
+I contributed with programming all the basic movements of all the pieces excluding special moves, and programming code for the general parts of the game like the board and player and such.
 
 ## Our Game
 
