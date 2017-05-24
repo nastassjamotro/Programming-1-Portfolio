@@ -724,3 +724,893 @@ void draw() {
 ## THE END
 
 # Hope you enjoy our game! :)
+
+# Individual Projects Made in Processing and in my individual language: Java
+
+## The first is a project I made while in Processing in the beginning of this course
+
+This app is meant to be a calculator. It has the basic four functions: addition, subtraction, multiplication, and division. Along with this, it has a period function, sine, cosine, tangent, squared, square root, root power, and logarithm functions. Each number button is drawn "by hand."
+
+**Code For Main Calculator Class:**
+
+```javascript
+// Instantiate each of the classification of buttons
+Button[] numButtons = new Button[10];
+Button[] opButtons = new Button[14];
+Button[] spButtons = new Button[1];
+
+String displayVal = "0";
+String valToCompute = ""; // string value left of operator
+String valToCompute2 = ""; // string value right of operator
+float valToComputeI = 0; // float value left of operator
+float valToComputeI2 = 0; // float value right of operator
+float result = 0;
+char opVal;
+boolean firstNum;
+color b2, b1, b3;
+color d1, d2;
+int y_axis = 1;
+int x_axis = 2;
+String opValue;
+boolean on1, on2;
+
+void setup() {
+  size(420, 560);
+  background(255);
+  frameRate(10);
+  noFill();
+  strokeWeight(3);
+  stroke(200);
+  rect(0, 0, 420, 560);
+  b2 = color(0, 0, 255);
+  b1 = color(0);
+  b3 = color(23, 209, 255);
+  d1 = color(62, 241, 255);
+  d2 = color(103, 104, 255);
+
+  // Populate number buttons
+  numButtons[0] = new Button(130, 485).asNumber(0, 1, 1, b2);
+  numButtons[1] = new Button(130, 405).asNumber(1, 12, 12, b2);
+  numButtons[2] = new Button(210, 418).asNumber(2, 60, 60, b2);
+  numButtons[3] = new Button(290, 430).asNumber(3, 60, 60, b2);
+  numButtons[4] = new Button(140, 325).asNumber(4, 12, 12, b2);
+  numButtons[5] = new Button(205, 347).asNumber(5, 60, 60, b2);
+  numButtons[6] = new Button(285, 350).asNumber(6, 60, 60, b2);
+  numButtons[7] = new Button(150, 245).asNumber(7, 10, 10, b2);
+  numButtons[8] = new Button(210, 253).asNumber(8, 20, 20, b2);
+  numButtons[9] = new Button(300, 248).asNumber(9, 10, 10, b2);
+
+  // Populate operators
+  opButtons[0] = new Button(340, 480).asOperator(" =", 60, 60, b1);
+  opButtons[1] = new Button(340, 400).asOperator(" +", 60, 60, b1);
+  opButtons[2] = new Button(340, 320).asOperator(" -", 60, 60, b1);
+  opButtons[3] = new Button(340, 240).asOperator(" x", 60, 60, b1);
+  opButtons[4] = new Button(340, 160).asOperator(" ÷", 60, 60, b1);
+  opButtons[5] = new Button(20, 160).asOperator(" C", 60, 60, b1);
+  opButtons[6] = new Button(260, 480).asOperator("(-)", 60, 60, b1);
+  opButtons[7] = new Button(20, 240).asOperator("x²", 60, 60, b1);
+  opButtons[8] = new Button(20, 320).asOperator("√x", 60, 60, b1);
+  opButtons[9] = new Button(260, 160).asOperator("tan", 60, 60, b1);
+  opButtons[10] = new Button(20, 480).asOperator("log", 60, 60, b1);
+  opButtons[11] = new Button(100, 160).asOperator("sin", 60, 60, b1);
+  opButtons[12] = new Button(20, 400).asOperator(" ^", 60, 60, b1);
+  opButtons[13] = new Button(180, 160).asOperator("cos", 60, 60, b1);
+
+
+  // Populate special buttons
+  spButtons[0] = new Button(180, 480).asSpecial(" .", 60, 60);
+
+  // Set the initial value of first num to true
+  firstNum = true;
+}
+
+void draw() {
+  //Calculator Gradient
+  setGradient(0, 0, 420, 560, d1, d2, x_axis);
+
+  //Draw number buttons
+  for (int i=0; i<numButtons.length; i++) {
+    numButtons[i].display();
+    numButtons[i].click();
+  }
+
+  //Draw Operator Buttons
+  for (int i=0; i<opButtons.length; i++) {
+    opButtons[i].display();
+    opButtons[i].click();
+  }
+
+  // Draw Special Buttons
+  for (int i=0; i<spButtons.length; i++) {
+    spButtons[i].display();
+    spButtons[i].click();
+  }
+  updateDisplay();
+}
+
+void mousePressed() {
+  for (int i=0; i<numButtons.length; i++) {
+    numButtons[i].click();
+    if (numButtons[i].over) {
+      if (firstNum) {
+        println(i + " " + numButtons[i].numButtonVal);
+        valToCompute += int(numButtons[i].numButtonVal);
+        displayVal = valToCompute;
+      } else {
+        valToCompute2 += int(numButtons[i].numButtonVal);
+        displayVal = valToCompute2;
+      }
+    }
+  }
+  for (int i=0; i<opButtons.length; i++) {
+    opButtons[i].click();
+    if (opButtons[i].over) {
+      if (opButtons[i].opButtonVal == " +") {
+        if ( result !=0) {
+          opVal = '+';
+          opValue = "+";
+          valToCompute2 = "";
+          firstNum = false;
+          displayVal = "+";
+        } else {
+          opVal = '+';
+          opValue = "+";
+          firstNum = false;
+          displayVal = "+";
+        }
+      } else if (opButtons[i].opButtonVal == " =") {
+        // Perform calculation
+        firstNum = true;
+        performCalc();
+      } else if (opButtons[i].opButtonVal == " -") {
+        if (result !=0) {
+          opVal = '-';
+          opValue = "-";
+          valToCompute2 = "-";
+          firstNum = false;
+          displayVal = "-";
+        } else {
+          opVal = '-';
+          opValue = "-";
+          firstNum = false;
+          displayVal = "-";
+        }
+      } else if (opButtons[i].opButtonVal == " x") {
+        if (result !=0) {
+          opVal = 'x';
+          opValue = "x";
+          valToCompute2 = "x";
+          firstNum = false;
+          displayVal = "x";
+        } else {
+          opVal = 'x';
+          opValue = "x";
+          firstNum = false;
+          displayVal = "x";
+        }
+      } else if (opButtons[i].opButtonVal == " ÷") {
+        if (result !=0) {
+          opVal = '÷';
+          opValue = "÷";
+          valToCompute2 = "÷";
+          firstNum = false;
+          displayVal = "÷";
+        } else {
+          opVal = '÷';
+          opValue = "÷";
+          firstNum = false;
+          displayVal = "÷";
+        }
+      } else if (opButtons[i].opButtonVal == " C") {
+        displayVal = "0";
+        opVal = 'C';
+        opValue = "C";
+        valToCompute = "";
+        valToCompute2 = "";
+        valToComputeI = 0;
+        valToComputeI2 = 0;
+        result = 0;
+        firstNum = true;
+      } else if (opButtons[i].opButtonVal == "(-)") {
+        opVal = 'n';
+        performCalc();
+      } else if (opButtons[i].opButtonVal == "x²") {
+        if (result !=0) {
+          opVal = '²';
+          opValue = "²";
+          valToCompute2 = " ²";
+          firstNum = false;
+          displayVal = " ²";
+        } else {
+          opVal = '²';
+          opValue = "²";
+          firstNum = false;
+          displayVal = " ²";
+        }
+      } else if (opButtons[i].opButtonVal == "√x") {
+        if (result !=0) {
+          opVal = '√';
+          opValue = "√";
+          valToCompute = "√"; 
+          firstNum = false;
+          displayVal = "√";
+        } else {
+          opVal = '√';
+          opValue = "√";
+          firstNum = false;
+          displayVal = "√";
+        }
+      } else if (opButtons[i].opButtonVal == "log") {
+        if (result !=0) {
+          opVal = 'l';
+          opValue = "log";
+          valToCompute2 = "log";
+          firstNum = false;
+          displayVal = "log";
+        } else {
+          opVal = 'l';
+          opValue = "log";
+          firstNum = false;
+          displayVal = "log";
+        }
+      } else if (opButtons[i].opButtonVal == " ^") {
+        if (result !=0) {
+          opVal = '^';
+          opValue = "^";
+          valToCompute2 = "^";
+          firstNum = false;
+          displayVal = "^";
+        } else {
+          opVal = '^';
+          opValue = "^";
+          firstNum = false;
+          displayVal = "^";
+        }
+      } else if (opButtons[i].opButtonVal == "tan") {
+        if (result !=0) {
+          opVal = 't';
+          opValue = "tan";
+          valToCompute = "tan";
+          firstNum = false;
+          displayVal = "tan";
+        } else {
+          opVal = 't';
+          opValue = "tan";
+          firstNum = false;
+          displayVal = "tan";
+        }
+      } else if (opButtons[i].opButtonVal == "sin") {
+        if (result !=0) {
+          opVal = 's';
+          opValue = "sin";
+          valToCompute = "sin";
+          firstNum = false;
+          displayVal = "sin";
+        } else {
+          opVal = 's';
+          opValue = "sin";
+          firstNum = false;
+          displayVal = "sin";
+        }
+      } else if (opButtons[i].opButtonVal == "cos") {
+        if (result !=0) {
+          opVal = 'c';
+          opValue = "cos";
+          valToCompute = "cos";
+          firstNum = false;
+          displayVal = "cos";
+        } else {
+          opVal = 'c';
+          opValue = "cos";
+          firstNum = false;
+          displayVal = "cos";
+        }
+      }
+    }
+  }
+  for (int i=0; i<spButtons.length; i++) {
+    spButtons[i].click();
+    if (spButtons[i].over) {
+      if (spButtons[i].spButtonVal == " .") {
+        // concantenate the values clicked on
+        if (spButtons[i].over && firstNum == true) {
+          valToCompute += spButtons[i].spButtonVal;
+          displayVal = valToCompute;
+        } else if (spButtons[i].over && firstNum == false) {
+          valToCompute2 += spButtons[i].spButtonVal;
+          displayVal = valToCompute2;
+        }
+      }
+    }
+  }
+}
+
+
+void performCalc() {
+  // set string values to integers
+  valToComputeI = float(valToCompute);
+  valToComputeI2 = float(valToCompute2);
+
+  //perform calculation based on the appropriate operator
+  if (opVal == '+') {
+    result = valToComputeI + valToComputeI2;
+    displayVal = str(result);
+  } else if (opVal == '-') {
+    result = valToComputeI - valToComputeI2;
+    displayVal = str(result);
+  } else if (opVal == 'x') {
+    result = valToComputeI * valToComputeI2;
+    displayVal = str(result);
+  } else if (opVal == '÷') {
+    result = valToComputeI / valToComputeI2;
+    displayVal = str(result);
+  } else if (opVal == 'n') {
+    if (firstNum) {
+      valToComputeI = valToComputeI*-1;
+      displayVal = str(valToComputeI);
+    } else {
+      valToComputeI2 = valToComputeI2*-1;
+      displayVal = str(valToComputeI);
+    }
+  } else if (opVal == '²') {
+    result = valToComputeI * valToComputeI;
+    displayVal = str(result);
+  } else if (opVal =='√') {
+    result = sqrt(valToComputeI2);
+    displayVal = str(result);
+  } else if (opVal == 'l') {
+    result = log(valToComputeI2);
+    displayVal = str(result);
+  } else if (opVal == '^') {
+    result = pow(valToComputeI, valToComputeI2);
+    displayVal = str(result);
+  } else if (opVal == 't') {
+    result = tan(radians(valToComputeI2));
+    displayVal = str(result);
+  } else if (opVal == 's') {
+    result = sin(radians(valToComputeI2));
+    displayVal = str(result);
+  } else if (opVal == 'c') {
+    result = cos(radians(valToComputeI2));
+    displayVal = str(result);
+  }
+
+  //let = work multiple times
+  if (firstNum) {
+    valToCompute = displayVal;
+  } else {
+    valToCompute = displayVal;
+    valToCompute2 = "";
+  }
+}
+
+void updateDisplay() {
+  fill(255, 255, 255);
+  rect(20, 20, 380, 120, 5);
+  fill(0);
+  textSize(25);
+  if (firstNum) {
+    text(displayVal, 40, 30, 360, 120);
+  } else {
+    text(valToCompute + "" + opValue + "" + valToCompute2, 40, 30, 360, 120);
+  }
+}
+
+void setGradient(int x, int y, float w, float h, color d1, color d2, int axis) {
+  noFill();
+  if (axis == y_axis) {
+    for (int i = y; i<=y+h; i++) {
+      float inter = map(i, y, h, 0, 1);
+      color c = lerpColor(d1, d2, inter);
+      stroke(c);
+      line(i, y, i, y+h);
+    }
+  } else if (axis == x_axis) {
+    for (int i=x; i<=x+w; i++) {
+      float inter = map(i, x, x+w, 0, 1);
+      color c = lerpColor(d1, d2, inter);
+      stroke(c);
+      line(i, y, i, y+h);
+    }
+  }
+}
+```
+
+**Code for Button Class:**
+
+```javascript
+class Button {
+  // Class variables
+  color b1, b2, b3, t1, t2;
+  boolean isNumber;
+  boolean isSpecial;
+  boolean isOperator;
+  int numButtonVal;
+  String opButtonVal;
+  String spButtonVal;
+  float x, y;
+  //int boxSize = 60;
+  int w = 60, h = 60;
+  boolean over = false;
+/*  boolean asShapeZero= false;
+  boolean asShapeOne= false;
+  boolean asShapeTwo= false;
+  boolean asShapeThree= false;
+  boolean asShapeFour= false;
+  boolean asShapeFive= false;
+  boolean asShapeSix= false;
+  boolean asShapeSeven= false;
+  boolean asShapeEight= false;
+  boolean asShapeNine= false;*/
+
+  // Constructor
+  Button(float x, float y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  // Constructor for number buttons
+  Button asNumber( int numButtonVal, int w, int h, color b2) {
+    this.numButtonVal = numButtonVal;
+    this.w = w;
+    this.h = h;
+    this.b2 = b2;
+    return this;
+  }
+
+  // Constructor for operator buttons
+  Button asOperator(String opButtonVal, int w, int h, color b1) {
+    this.opButtonVal = opButtonVal;
+    this.w = w;
+    this.h = h;
+    this.b1 = b1;
+    isOperator = true;
+    return this;
+  }
+
+  // Constructor for special buttons
+  Button asSpecial(String spButtonVal, int w, int h) {
+    this.spButtonVal = spButtonVal;
+    this.w = w;
+    this.h = h;
+    isSpecial = true;
+    return this;
+  }
+
+  // Draw the button on the canvas
+  void display() {
+    if (isSpecial) {
+      fill(b3);
+      stroke(0);
+      strokeWeight(2);
+      rect(x, y, w, h, 10);
+      fill(b3);
+      rect(x-2, y+2, w, h, 10);
+      fill(255);
+      textSize(15);
+      text(spButtonVal, x+20, y+40);
+    } else if (isOperator) {
+      fill(b3);
+      stroke(0);
+      strokeWeight(2);
+      rect(x, y, w, h, 10);
+      fill(b3);
+      rect(x-2, y+2, w, h, 10);
+      fill(255);
+      textSize(24);
+      text(opButtonVal, x+15, y+40);
+    } else if (numButtonVal == 0) {
+      numberZero();
+    } else if (numButtonVal == 1) {
+      numberOne();
+    } else if (numButtonVal == 2) {
+      numberTwo();
+    } else if (numButtonVal == 3) {
+      numberThree();
+    } else if (numButtonVal == 4) {
+      numberFour();
+    } else if (numButtonVal == 5) {
+      numberFive();
+    } else if (numButtonVal == 6) {
+      numberSix();
+    } else if (numButtonVal == 7) {
+      numberSeven();
+    } else if (numButtonVal == 8) {
+      numberEight();
+    } else if (numButtonVal == 9) {
+      numberNine();
+    }
+  }
+
+  void numberZero() {
+    noStroke();
+    fill(0, 0, 255);
+    ellipse(x, y, w, h);
+    noFill();
+    stroke(0, 0, 255);
+    strokeWeight(8.5);
+    arc(x, y+23, w+34, h+54, -PI, PI);
+  }
+
+  void numberOne() {
+    noStroke();
+    fill(0, 0, 255);
+    ellipse(x, y, w, h);
+    rect(x-3.5, y, w-3, h+35);
+    ellipse(x-20, y+15, w-3, h-3);
+    quad(x-6, y-4, x-26, y+15, x-19, y+20, x+6, y-4);
+    ellipse(x-20, y+50, w-4, h-4);
+    ellipse(x+20, y+50, w-4, h-4);
+    rect(x-20, y+46, w+30, h-4);
+  }
+
+  void numberEight() {
+    noFill();
+    stroke(0, 0, 255);
+    strokeWeight(6.5);
+    arc(x, y, w, h, -PI, PI);
+    arc(x, y+28, w+5, h+10, -PI, PI);
+  } 
+
+  void numberSeven() {
+    fill(0, 0, 255);
+    noStroke();
+    ellipse(x-35, y, w, h);
+    ellipse(x, y, w, h);
+    rect(x-35, y-5, w+25, h);
+    ellipse(x-25, y+50, w, h);
+    quad(x-28, y+45, x-2, y-5, x+3, y+4, x-22, y+53);
+  } 
+
+  void numberNine() {
+    noStroke();
+    fill(0, 0, 255);
+    ellipse(x, y, w, h);
+    ellipse(x, y+48, w, h);
+    rect(x-4, y, w-2, h+35);
+    noFill();
+    stroke(0, 0, 255);
+    strokeWeight(7);
+    arc(x-15, y+10, w+15, h+15, -PI, PI);
+  }
+
+  void numberFour() {
+    noStroke();
+    fill(0, 0, 255);
+    ellipse(x, y, w, h);
+    ellipse(x, y+50, w-2, h-2);
+    rect(x-4, y, w-3, h+35);
+    ellipse(x-30, y+25, w-4, h-4);
+    quad(x-5, y-4, x-32, y+20, x-26, y+27, x+4, y);
+    ellipse(x+5, y+25, w-2, h-2);
+    rect(x-30, y+21, w+27, h-3);
+  }
+
+  void numberThree() {
+    smooth();
+    noStroke();
+    noFill();
+    rect(x, y, w, h);
+    stroke(0, 0, 255);
+    strokeWeight(9);
+    arc(x-3, y-12, w-29, h-38, -PI/2, PI/2);
+    arc(x-3, y+10, w-29, h-38, -PI/2, PI/2);
+  } 
+
+  void numberTwo() {
+    noStroke();
+    noFill();
+    rect(x, y, w, h);
+    stroke(0, 0, 255);
+    strokeWeight(8);
+    arc(x, y, w-30, h-35, -PI, PI/3.5);
+    noStroke();
+    fill(0, 0, 255);
+    ellipse(x-15, y+38, w-51, h-51);
+    ellipse(x+15, y+38, w-51, h-51);
+    rect(x-15, y+34, w-30, h-52);
+    quad(x+7, y+7, x-17, y+35, x-8, y+35, x+12, y+12);
+  }
+
+  void numberFive() {
+    noStroke();
+    noFill();
+    rect(x, y, w, h);
+    stroke(0, 0, 255);
+    strokeWeight(8);
+    arc(x-3, y+15, w-22, h-32, -PI/2, PI/2);
+    noStroke();
+    fill(0, 0, 255);
+    ellipse(x-3, y-20, w-51, h-51);
+    ellipse(x+18, y-20, w-51, h-51);
+    rect(x-7, y-22, w-52, h-37);
+    rect(x-7, y-24, w-35, h-52);
+  }
+
+  void numberSix() {
+    noStroke();
+    noFill();
+    rect(100, 100, 60, 60);
+    stroke(0, 0, 255);
+    strokeWeight(8);
+    arc(x+5, y, w-40, h-10, PI/2, 5*PI/2.9);
+    arc(x+9, y+15, w-40, h-38, -PI, PI);
+  }
+
+  // Handle mouse actions
+  void click() {
+    over = mouseX > x-25 && mouseX < x+45 && mouseY > y-5 && mouseY < y+60;
+  }
+}
+```
+
+## The Second is a type of screensaver app also made in Processing
+
+This app make random lines in random colors all over the screen and it looks really cool
+
+**Code for Main Screensaver Class:**
+
+```javascript
+Lines[] myLines = new Lines[20];
+
+void setup() {
+  size(displayWidth,displayHeight);
+  background(0);
+//  frameRate(20);
+  for (int i=0; i<myLines.length; i++) {
+    myLines[i] = new Lines(random(width), random(height), random(3,4), random(20,40));
+  }
+}
+
+void draw() {
+  for(int i=0; i<myLines.length; i++) {
+    myLines[i].display();
+  }
+}
+```
+
+**Code for Lines Class:**
+
+```javascript
+class Lines {
+  // class variables
+  float x;
+  float y;
+  float strokeW;
+  float pointCount;
+  float reset;
+  color c;
+
+  //constructor
+  Lines(float tempX, float tempY, float tempStroke, float tempLength) {
+    x = tempX;
+    y = tempY;
+    strokeW = tempStroke;
+    pointCount = tempLength;
+    reset=0;
+    c=0;
+  }
+
+  // display
+  void display() {
+    if (reset==0) {
+      c=color(random(130, 200), random(130, 200), random(130, 200));
+    }
+    //    strokeW = random(1, 4);
+    //    pointCount = random(1,10);
+    stroke(c);
+    if (x > width || x < 0 || y > height || y < 0) {
+      x = random(width);
+      y = random(height);
+    } else {
+      if (random(100)>80) {
+        strokeWeight(strokeW);
+        moveRight(x, y, pointCount);
+      } else if (random(100)>70) {
+        strokeWeight(strokeW);
+        moveUp(x, y, pointCount);
+      } else if (random(100)>50) {
+        strokeWeight(strokeW);
+        moveDown(x, y, pointCount);
+      } else if (random(100)>40) {
+        strokeWeight(strokeW);
+        moveLeft(x, y, pointCount);
+      } else if (random(100)>75) {
+        strokeWeight(strokeW);
+        moveUpAndRight(x, y, pointCount);
+      } else if (random(100)>40) {
+        strokeWeight(strokeW);
+        moveUpAndLeft(x, y, pointCount);
+      } else if (random(100)>50) {
+        strokeWeight(strokeW);
+        moveDownAndLeft(x, y, pointCount);
+      } else {
+        strokeWeight(strokeW);
+        moveDownAndRight(x, y, pointCount);
+      }
+    }
+    reset++;
+    if (reset>height) {
+      background(0);
+      reset=0;
+      x=(random(width));
+      y=(random(height));
+      c=color(random(130, 200), random(130, 200), random(130, 200));
+    }
+  }
+
+  void moveRight(float startX, float startY, float moveCount) {
+    for (float i=0; i<moveCount; i++) {
+      point(startX+i, startY);
+      x = startX + i;
+    }
+  }
+
+  void moveLeft(float startX, float startY, float moveCount) {
+    for (float i=0; i<moveCount; i++) {
+      point(startX-i, startY);
+      x = startX - i;
+    }
+  }
+
+  void moveUp(float startX, float startY, float moveCount) {
+    for (float i=0; i<moveCount; i++) {
+      point(startX, startY-i);
+      y = startY - i;
+    }
+  }
+
+  void moveDown(float startX, float startY, float moveCount) {
+    for (float i=0; i<moveCount; i++) {
+      point(startX, startY+i);
+      y = startY + i;
+    }
+  }
+
+  void moveUpAndRight(float startX, float startY, float moveCount) {
+    for (float i=0; i<moveCount; i++) {
+      point(startX+i, startY-i);
+      x = startX + i;
+      y = startY - i;
+    }
+  }
+
+  void moveUpAndLeft(float startX, float startY, float moveCount) {
+    for (float i=0; i<moveCount; i++) {
+      point(startX-i, startY-i);
+      x = startX - i;
+      y = startY - i;
+    }
+  }
+
+  void moveDownAndRight(float startX, float startY, float moveCount) {
+    for (float i=0; i<moveCount; i++) {
+      point(startX+i, startY+i);
+      x = startX + i;
+      y = startY + i;
+    }
+  }
+
+  void moveDownAndLeft(float startX, float startY, float moveCount) {
+    for (float i=0; i<moveCount; i++) {
+      point(startX-i, startY+i);
+      x = startX - i;
+      y = startY + i;
+    }
+  }
+}
+
+
+
+//cool pattern
+/*  strokeWeight(strokeW);
+ moveRight(x, y, pointCount);
+ moveUp(x,y,pointCount);
+ moveLeft(x, y, pointCount);
+ moveLeft(x,y,pointCount);
+ moveUp(x,y,pointCount);
+ moveRight(x,y,pointCount);
+ moveDown(x,y,pointCount);*/
+```
+
+## The third is also an app from Processing. It's a years to minutes conversion calculator
+
+This app, as you scroll over the screen with your mouse, the bar changes according to how many minutes or years.
+
+```javascript
+void setup() {
+  size(900,300);
+}
+
+void draw() {
+  textSize(12.5);
+  yearsToMinutes(mouseX-100);
+  fill(0);
+  rect(100,160,mouseX-100,20);
+  drawReference(100,150);
+  fill(255);
+  textSize(20);
+  text("Years to Minutes Conversion",width/2-140,25);
+  textSize(14);
+  text("By: Nastassja Motro",width/2-80,50);
+  text("Slide the mouse along the screen to see how many minutes are in a certain number of years", 140,75);
+}
+
+void drawReference(int x, int y) {
+  fill(255);
+  line(x-150,y,900,y);
+  for(int i=-50; i<800; i+=50) {
+    stroke(255);
+    line(x+i,y-5,x+i,y+5);
+    text(i,x+i-7,y-8);
+  }
+}
+
+float yearsToMinutes(float val) {
+  val = val*365*24*60;
+  background(0,0,255);
+  fill(255);
+  text("Years: " + int(mouseX-100),100,220);
+  text("Minutes: " + int(val), 100,240);
+  return val;
+}
+```
+
+## The fourth is a project I did in the beginning of my introduction to java. It's called 99 Bottles
+
+This program replicated the famous car song: 99 Bottles of Beer on the Wall
+
+```javascript
+public class bottles
+{
+	public static void main(String args[])
+	{
+		String s = “s”;
+		for (int beers=99; beers>-1;)
+		{
+			System.out.print(beers + “ bottle” + s + “ of beer on the wall, “);
+			System.out.println(beers + “ bottle” + s + “ of beer, “);
+			if (beers==0)
+			{
+				System.out.print(“Go to the store, buy some more, “);
+				System.out.println(“99 bottles of beer on the wall.\n”);
+				System.exit(0);
+				}
+			else
+				System.out.print(“Take one down, pass it around, “);
+			s = (—-beers == 1)?””:”s”;
+			System.out.println(beers + “ bottle” + s + of beer on the wall.\n”);
+			}
+		}
+}
+```
+
+## The fifth and final one is another program I made on java. It's called Dice Game.
+
+This program replicated the random scenario of if a dice was rolled.
+
+```javascript
+import java.util.Random;
+
+public class DiceGame {
+    
+    public static void main(String[] args) {
+        Random rand = new Random();
+        
+        int freq[] = new int[7];
+        for (int roll = 1; roll < 100; roll++) {
+            
+            ++freq[1 + rand.nextInt(6)];
+        }
+        
+        System.out.println("Face\tFrequency");
+        for(int face = 1; face < freq.length; face++) {
+            System.out.println(face + "\t" + freq[face]);
+        }
+    }
+}
+```
+
+## Those are just some of the small programs I made during the year 2016-2017 in my introductory Computer Programming 1 class.
+
+# The End :)
