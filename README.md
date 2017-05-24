@@ -731,6 +731,10 @@ void draw() {
 
 This app is meant to be a calculator. It has the basic four functions: addition, subtraction, multiplication, and division. Along with this, it has a period function, sine, cosine, tangent, squared, square root, root power, and logarithm functions. Each number button is drawn "by hand."
 
+When running this is what it would look like:
+
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/calculator.png "Logo Title Text 1")
+
 **Code For Main Calculator Class:**
 
 ```javascript
@@ -1346,7 +1350,11 @@ class Button {
 
 ## The Second is a type of screensaver app also made in Processing
 
-This app make random lines in random colors all over the screen and it looks really cool
+This app make random lines in random colors all over the screen and it looks really cool.
+
+When running, this is what it would look like:
+
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/random.png "Logo Title Text 1")
 
 **Code for Main Screensaver Class:**
 
@@ -1516,6 +1524,11 @@ class Lines {
 ## The third is also an app from Processing. It's a years to minutes conversion calculator
 
 This app, as you scroll over the screen with your mouse, the bar changes according to how many minutes or years.
+
+When running this is what it would look like:
+
+![alt text](https://nastassjamotro.github.io/Programming-1-Portfolio/temp.png "Logo Title Text 1")
+
 
 ```javascript
 void setup() {
